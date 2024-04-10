@@ -1,0 +1,136 @@
+{
+  "status": "ok",
+  "totalResults": 10,
+  "articles": [
+    {
+      "source": {
+        "id": "medical-news-today",
+        "name": "Medical News Today"
+      },
+      "author": "Katharine Lang",
+      "title": "Brain's unique ‘pain fingerprint’ could lead to personalized pain management",
+      "description": "Researchers are moving toward a better understanding of the way in which individuals experience pain. Each brain has a unique 'pain fingerprint,' a new study suggests.",
+      "url": "http://www.medicalnewstoday.com/articles/brains-unique-pain-fingerprint-could-lead-to-personalized-pain-management",
+      "urlToImage": "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2023/06/Pain_fingerprint_GettyImages713782231_Thumb.jpg",
+      "publishedAt": "2023-06-26T11:30:00Z",
+      "content": "<ul><li>Pain occurs when nerve cells detect damage and transmit signals to the brain for interpretation.</li><li>Everyone feels pain differently, which makes it challenging for doctors to define and … [+7032 chars]"
+    },
+    {
+      "source": {
+        "id": "medical-news-today",
+        "name": "Medical News Today"
+      },
+      "author": "Annie Lennon",
+      "title": "Could loneliness impact bone health in males?",
+      "description": "A study in mice has found a link between social isolation and bone loss or lower bone density in male individuals.",
+      "url": "http://www.medicalnewstoday.com/articles/could-loneliness-impact-bone-health-in-males",
+      "urlToImage": "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2023/06/Silhouette-man-loneliness-732x549-thumbnail.jpg",
+      "publishedAt": "2023-06-25T06:00:00Z",
+      "content": "<ul><li>Researchers investigated the effects of social isolation on bone loss in mice. </li><li>They found that social isolation was associated with increased bone loss in male, but not female, mice.… [+6575 chars]"
+    },
+    {
+      "source": {
+        "id": "medical-news-today",
+        "name": "Medical News Today"
+      },
+      "author": "Corrie Pelc",
+      "title": "A probiotic may help treat dry eye disease, according to a study in mice",
+      "description": "Research in mice has revealed that a probiotic bacterial strain may help treat dry eye disease, a common condition in which the eyes are unable to self-lubricate sufficiently.",
+      "url": "http://www.medicalnewstoday.com/articles/a-probiotic-may-help-treat-dry-eye-disease-according-to-a-study-in-mice",
+      "urlToImage": "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2023/06/dry_eye_GettyImages1320218178_Thumb.jpg",
+      "publishedAt": "2023-06-24T06:00:00Z",
+      "content": "<ul><li>About 12% of the global population has dry eye, a condition in which the eyes are unable to self-lubricate sufficiently.</li><li>There is currently no cure for dry eye disease.</li><li>Resear… [+5756 chars]"
+    },
+    {
+      "source": {
+        "id": "medical-news-today",
+        "name": "Medical News Today"
+      },
+      "author": "Paul Ian Cross, PhD",
+      "title": "Excess alcohol consumption may speed up progression of Alzheimer's disease",
+      "description": "Excessive alcohol intake may accelerate the advancement of Alzheimer's disease in those with genetic susceptibility, a mice study indicates.",
+      "url": "http://www.medicalnewstoday.com/articles/excess-alcohol-speeds-up-alzheimers-progression",
+      "urlToImage": "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2023/06/Alcohol_Alzheimers_GettyImages1275822633_Thumb.jpg",
+      "publishedAt": "2023-06-23T16:54:22Z",
+      "content": "<ul><li>New research undertaken by scientists from Scripps Research and the University of Bologna reveals that combining genetic susceptibility with alcohol use disorder (AUD) may accelerate the adva… [+8472 chars]"
+    },
+    {
+      "source": {
+        "id": "medical-news-today",
+        "name": "Medical News Today"
+      },
+      "author": "Corrie Pelc",
+      "title": "Diet high in omega-3 fatty acids linked to slower ALS progression in new study",
+      "description": "A new study has found that people with amyotrophic lateral sclerosis (ALS) who follow a diet high in omega-3 fatty acids seem to have slower disease progression and improved survival rates.",
+      "url": "http://www.medicalnewstoday.com/articles/diet-high-in-omega-3-fatty-acids-linked-to-slower-als-progression-in-new-study",
+      "urlToImage": "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2023/06/Omega-3_fatty_Stocksy_txp89e634daqJf300_Medium_5242619_Thumb.jpg",
+      "publishedAt": "2023-06-23T16:14:50Z",
+      "content": "<ul><li>Omega-3 fatty acids are known to have a variety of health benefits. </li><li>Researchers from Harvard University have now found that people with ALS who eat foods high in omega-3 fatty acids … [+7151 chars]"
+    },
+    {
+      "source": {
+        "id": "medical-news-today",
+        "name": "Medical News Today"
+      },
+      "author": "Deep Shukla",
+      "title": "Eczema: How symptom improvement affects patient satisfaction with treatments",
+      "description": "Researchers are reporting that the reduction in a person's symptoms in atopic dermatitis, the most common form of eczema, influences their satisfaction with treatments and their willing to stick with these therapies",
+      "url": "http://www.medicalnewstoday.com/articles/patients-who-achieve-rapid-onset-itch-relief-skin-clearance-more-satisfied-with-eczema-therapy",
+      "urlToImage": "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2023/06/itch-beard-mirror-eczema-therapy-732x549-thumbnail.jpg",
+      "publishedAt": "2023-06-23T10:09:00Z",
+      "content": "<ul><li>Atopic dermatitis, the most prevalent type of eczema, can cause itchy skin and rashes that impair a persons quality of life.</li><li>Topical therapy, such as corticosteroid creams, can help a… [+5896 chars]"
+    },
+    {
+      "source": {
+        "id": "medical-news-today",
+        "name": "Medical News Today"
+      },
+      "author": "Katharine Lang",
+      "title": "Can dietary supplements help treat depression? The latest research",
+      "description": "In this Special Feature, we offer an overview of the latest evidence about whether or not dietary supplements, such as probiotics, can help ease the symptoms of depression.",
+      "url": "http://www.medicalnewstoday.com/articles/can-dietary-supplements-help-treat-depression-the-latest-research",
+      "urlToImage": "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2023/06/supplements_depression_GettyImages1485249390_Thumb.jpg",
+      "publishedAt": "2023-06-22T16:00:00Z",
+      "content": "Depression is a common mental health disorder that affects many people worldwide. Effective treatments are available, but they do not work for everyone, so some people look to dietary supplements to … [+10393 chars]"
+    },
+    {
+      "source": {
+        "id": "medical-news-today",
+        "name": "Medical News Today"
+      },
+      "author": "Corrie Pelc",
+      "title": "How might sleep affect Alzheimer's risk?",
+      "description": "In this Special Feature, we look at the most recent evidence explaining the potential link between sleep quality and the risk of Alzheimer's disease or other forms of cognitive impairment.",
+      "url": "http://www.medicalnewstoday.com/articles/how-might-sleep-affect-alzheimers-risk",
+      "urlToImage": "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2023/06/sleep_Alzheimers_Stocksy_txpab4d6e90tTR300_Medium_3266612_Thumb.jpg",
+      "publishedAt": "2023-06-13T15:00:00Z",
+      "content": "Just like eating and drinking, sleeping is necessary for the body to function. For years, scientists have studied the impact of sleep on overall health. One major area receiving a lot of attention ov… [+9629 chars]"
+    },
+    {
+      "source": {
+        "id": "medical-news-today",
+        "name": "Medical News Today"
+      },
+      "author": "Hannah Flynn",
+      "title": "Could GLP-1 agonists be more than just a treatment for diabetes?",
+      "description": "GLP-1 agonists are used to treat type 2 diabetes. Some people also use them for weight loss. But do they also have the potential to reduce the risk of cancer, cardiovascular problems, and Alzheimer's disease?",
+      "url": "http://www.medicalnewstoday.com/articles/could-glp-1-agonists-be-more-than-just-a-treatment-for-diabetes",
+      "urlToImage": "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2023/06/pharmacy-shelves-glp-1-agonists-732x549-thumbnail.jpg",
+      "publishedAt": "2023-06-08T20:27:54Z",
+      "content": "High-profile coverage of the off-label use of Ozempic, a GLP-1 agonist, for weight loss, has meant that the type 2 diabetes drug has received a lot of bad press. As more studies into the long-term im… [+10956 chars]"
+    },
+    {
+      "source": {
+        "id": "medical-news-today",
+        "name": "Medical News Today"
+      },
+      "author": "Jillian Kubala, MS, RD",
+      "title": "Psoriasis and chronic inflammation: What is the link?",
+      "description": "While there is no cure for psoriasis, there are steps a person can take to reduce psoriasis-related inflammation and increase the chances of reaching and maintaining remission.",
+      "url": "http://www.medicalnewstoday.com/articles/psoriasis-and-chronic-inflammation",
+      "urlToImage": "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2023/03/Psoriasis_inflammation_GettyImages1254945635_Facebook-1200x628.jpg",
+      "publishedAt": "2023-04-19T14:22:22.7950331Z",
+      "content": "Although the exact cause of psoriasis is unknown, doctors consider it an immune-mediated inflammatory disease. This means that inflammation is at the root of this condition.\r\nUp to 3%\r\n of adults in … [+4991 chars]"
+    }
+  ]
+}

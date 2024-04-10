@@ -1,0 +1,11 @@
+framework module CCPlugin {
+  umbrella header "CCPlugin.h"
+  export *
+
+  module * { export * }
+}
+
+module CCPlugin.Swift {
+  header "CCPlugin-Swift.h"
+  requires objc
+}
