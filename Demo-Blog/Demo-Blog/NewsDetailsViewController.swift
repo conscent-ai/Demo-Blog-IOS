@@ -22,6 +22,8 @@ class NewsDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CCplugin.shared.getUserDetail(completiondelegate: self)
         self.setData()
         if isNeedToShowPayWall {
             CCplugin.shared.configure(mode: .sandbox, clientID: "661907c2487ae1aba956dcc4")
@@ -123,6 +125,13 @@ extension NewsDetailsViewController: CCPluginUserDetailsDelegate {
     //Success failure delegate callback methods
     func success(userDetails: UserDetails) {
         debugPrint(userDetails)
+        if let phone = userDetails.phoneNumber, !phone.isEmpty {
+            Helper.userName = userDetails.phoneNumber
+        }
+        
+        if let email = userDetails.email, !email.isEmpty {
+            Helper.userName = userDetails.email
+        }
     }
     
     func failure(error: String) {

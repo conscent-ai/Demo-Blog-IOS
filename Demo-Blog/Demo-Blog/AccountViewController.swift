@@ -56,8 +56,16 @@ extension AccountViewController: CCPluginUserDetailsDelegate {
     func success(userDetails: CCPlugin.UserDetails) {
         debugPrint(userDetails)
         Toast.shared.showToast(message: "PhoneNo.: \(userDetails.phoneNumber ?? "") Email: \(userDetails.email ?? "") Name: \(userDetails.name ?? "")", alignment: .center, size: 60)
-        Helper.userName = userDetails.phoneNumber
-        Helper.userName = userDetails.email
+        
+        if let phone = userDetails.phoneNumber, !phone.isEmpty {
+            Helper.userName = userDetails.phoneNumber
+        }
+        
+        if let email = userDetails.email, !email.isEmpty {
+            Helper.userName = userDetails.email
+        }
+//        Helper.userName = userDetails.phoneNumber
+//        Helper.userName = userDetails.email
     }
     
     func failure(error: String) {
