@@ -30,7 +30,7 @@
 		22FD578D2A3F6416009D577F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD57852A3F6416009D577F /* PageViewController.swift */; };
 		22FD57902A3F6712009D577F /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD578F2A3F6712009D577F /* PremiumViewController.swift */; };
 		22FD57ED2A4357DD009D577F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD57EC2A4357DD009D577F /* AccountViewController.swift */; };
-		AFF9196C2BC6562A0030B806 /* CCPlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF9196A2BC656250030B806 /* CCPlugin.xcframework */; };
+		AF418D1A2C576BDE00E82900 /* CCPlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF418D192C576BDE00E82900 /* CCPlugin.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +60,9 @@
 		22FD57EC2A4357DD009D577F /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		288D36BEB26993A713B9D2BF /* Pods-Demo-Blog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-Blog.release.xcconfig"; path = "Target Support Files/Pods-Demo-Blog/Pods-Demo-Blog.release.xcconfig"; sourceTree = "<group>"; };
 		88911ACF76C9F9913FA3AB27 /* Pods-Demo-Blog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-Blog.debug.xcconfig"; path = "Target Support Files/Pods-Demo-Blog/Pods-Demo-Blog.debug.xcconfig"; sourceTree = "<group>"; };
+		AF418D132C576B0900E82900 /* CCPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CCPlugin.xcframework; path = ../../../../Downloads/CCPlugin.xcframework; sourceTree = "<group>"; };
+		AF418D192C576BDE00E82900 /* CCPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CCPlugin.xcframework; sourceTree = "<group>"; };
 		AFF919672BC655F80030B806 /* CCPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CCPlugin.xcframework; path = ../../../Documents/GitHub/IOS/Build/CCPlugin.xcframework; sourceTree = "<group>"; };
-		AFF9196A2BC656250030B806 /* CCPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CCPlugin.xcframework; sourceTree = "<group>"; };
 		D4AD09249498CBC09D00B052 /* Pods_Demo_Blog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_Blog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFF9196C2BC6562A0030B806 /* CCPlugin.xcframework in Frameworks */,
+				AF418D1A2C576BDE00E82900 /* CCPlugin.xcframework in Frameworks */,
 				225E748A2A4B15D60054248E /* Pods_Demo_Blog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +82,7 @@
 		22FD57552A3C81A4009D577F = {
 			isa = PBXGroup;
 			children = (
+				AF418D192C576BDE00E82900 /* CCPlugin.xcframework */,
 				22FD57602A3C81A4009D577F /* Demo-Blog */,
 				22FD575F2A3C81A4009D577F /* Products */,
 				31E95601A122D6B19D166957 /* Pods */,
@@ -99,7 +101,6 @@
 		22FD57602A3C81A4009D577F /* Demo-Blog */ = {
 			isa = PBXGroup;
 			children = (
-				AFF9196A2BC656250030B806 /* CCPlugin.xcframework */,
 				22FD57612A3C81A4009D577F /* AppDelegate.swift */,
 				22FD57632A3C81A4009D577F /* SceneDelegate.swift */,
 				225E749A2A4C59B50054248E /* data.json */,
@@ -148,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				AFF919672BC655F80030B806 /* CCPlugin.xcframework */,
+				AF418D132C576B0900E82900 /* CCPlugin.xcframework */,
 				D4AD09249498CBC09D00B052 /* Pods_Demo_Blog.framework */,
 			);
 			name = Frameworks;

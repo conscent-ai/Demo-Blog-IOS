@@ -1,0 +1,162 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CCPlugin
+@_exported import CCPlugin
+import CoreGraphics
+import CoreText
+import DeveloperToolsSupport
+import Foundation
+import GoogleSignIn
+import SafariServices
+import Swift
+import SwiftUI
+import SystemConfiguration
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol CCPluginCompletionHandlerDelegate : AnyObject {
+  func success()
+  func failure()
+  func purchasedOrNot(accessTime: Swift.Bool)
+  func onCustomLinkSlot(link: Swift.String?, contentId: Swift.String)
+  func onPaywallVisible(paywallType: Swift.String, paywallDisplayType: Swift.String, paywallHeight: CoreFoundation.CGFloat)
+}
+public protocol CCPluginSubscribeBtnTapDelegate : AnyObject {
+  func subscribeBtnTap()
+}
+public protocol CCPluginSignBtnTapDelegate : AnyObject {
+  func signInTap()
+}
+public protocol CCPluginUserDetailDelegate : AnyObject {
+  func success(successData: Swift.String)
+  func failure(error: Swift.String)
+}
+public protocol CCPluginUserDetailsDelegate : AnyObject {
+  func success(userDetails: CCPlugin.UserDetails)
+  func failure(error: Swift.String)
+}
+public protocol CCPluginEventParamsDelegate : AnyObject {
+  func success(paywallId: Swift.String, contentId: Swift.String, paywallType: Swift.String, clientId: Swift.String, anonId: Swift.String)
+  func failure(error: Swift.String)
+}
+public protocol CCPluginUserLogOutDelegate : AnyObject {
+  func userLogOutSuccess()
+  func userLogOutFailure()
+}
+public protocol CCPluginUserLogInDelegate : AnyObject {
+  func userLogInSuccess(message: Swift.String, userId: Swift.String, authToken: Swift.String)
+  func userLogInFailure()
+}
+public protocol CCPluginGoogleUserLogInDelegate : AnyObject {
+  func startGoogleLogin()
+  func googleUserLogInSuccess()
+  func googleUserLogInFailure()
+}
+public enum Mode : Swift.String {
+  case stage
+  case sandbox
+  case production
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class CCplugin : ObjectiveC.NSObject {
+  public static let shared: CCPlugin.CCplugin
+  final public var mode: CCPlugin.Mode
+  final public var debugMode: Swift.Bool
+  final public var accentColor: UIKit.UIColor
+  final public var pageLength: Swift.Int
+  final public var scrollDepth: Swift.Int {
+    get
+    set
+  }
+  final public var scrollDepthPercentage: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  final public func configure(mode: CCPlugin.Mode = .stage, clientID: Swift.String)
+  final public func setClientUserId(clientUserId: Swift.String)
+  final public func showPayWall(contentID: Swift.String, title: Swift.String? = nil, categories: [Swift.String]? = nil, sections: [Swift.String]? = nil, tags: [Swift.String]? = nil, contentUrl: Swift.String? = nil, authorName: Swift.String? = nil, url: Swift.String? = nil, parentView: UIKit.UIView, navigationController: UIKit.UINavigationController? = nil, eventParamsDelegate: (any CCPlugin.CCPluginEventParamsDelegate)? = nil, googleUserLogInDelegate: (any CCPlugin.CCPluginGoogleUserLogInDelegate)? = nil, completiondelegate: any CCPlugin.CCPluginCompletionHandlerDelegate, subscriberDelegate: (any CCPlugin.CCPluginSubscribeBtnTapDelegate)? = nil, signInDelegate: (any CCPlugin.CCPluginSignBtnTapDelegate)? = nil)
+  final public func initSubscriptions(contentID: Swift.String, title: Swift.String? = nil, url: Swift.String? = nil, parentView: UIKit.UIView, completiondelegate: any CCPlugin.CCPluginCompletionHandlerDelegate, subscriberDelegate: (any CCPlugin.CCPluginSubscribeBtnTapDelegate)? = nil, signInDelegate: (any CCPlugin.CCPluginSignBtnTapDelegate)? = nil, showCrossButton: Swift.Bool = false)
+  final public func userLogIn(userLogInDelegate: any CCPlugin.CCPluginUserLogInDelegate)
+  final public func userLogout(userLogOutDelegate: (any CCPlugin.CCPluginUserLogOutDelegate)? = nil)
+  final public func googleUserLogIn(controller: UIKit.UIViewController, googleUserLogInDelegate: (any CCPlugin.CCPluginGoogleUserLogInDelegate)? = nil)
+  final public func getUserDetail(completiondelegate: any CCPlugin.CCPluginUserDetailsDelegate)
+  final public func exitSDK()
+  @objc deinit
+}
+extension CCPlugin.CCplugin {
+  final public func handleRelaunchApp(url: Foundation.URL)
+}
+extension UIKit.UIApplication {
+  @_Concurrency.MainActor(unsafe) public static var rootViewController: UIKit.UIViewController? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public static var topMostViewController: UIKit.UIViewController? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public static var presentedViewController: UIKit.UIViewController? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public static func topNavigationController(_ viewController: UIKit.UIViewController? = nil) -> UIKit.UINavigationController?
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var ccVisibleViewController: UIKit.UIViewController? {
+    get
+  }
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public static func ccLoadFromXib<T>(withOwner: Any? = nil, options: [UIKit.UINib.OptionsKey : Any]? = nil) -> T where T : UIKit.UIView
+}
+public struct ViewLayoutInfo {
+  public var vc: UIKit.UIViewController
+  public var view: UIKit.UIView
+  public init(vc: UIKit.UIViewController, view: UIKit.UIView)
+}
+public struct UserDetails : Swift.Codable {
+  public let address: CCPlugin.Address?
+  public let id: Swift.String?, status: Swift.String?
+  public let migrated: Swift.Bool?, isPhoneVerified: Swift.Bool?, isEmailVerified: Swift.Bool?
+  public let externalUserID: Swift.String?, clientGroupID: Swift.String?, phoneNumber: Swift.String?, createdAt: Swift.String?
+  public let updatedAt: Swift.String?
+  public let v: Swift.Int?
+  public let name: Swift.String?, email: Swift.String?
+  public let isSubscriber: Swift.Bool?, isMicropayer: Swift.Bool?
+  public let activeSubscriptions: [CCPlugin.ActiveSubscription]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ActiveSubscription : Swift.Codable {
+  public let id: Swift.String?
+  public let subscriptionType: CCPlugin.SubscriptionType?
+  public let subscriptionDetails: CCPlugin.SubscriptionDetails?
+  public let subscriptionID: Swift.String?, tierID: Swift.String?, type: Swift.String?, subscriptionTitle: Swift.String?
+  public let expiryDate: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SubscriptionDetails : Swift.Codable {
+  public let inrPrice: Swift.Int?, duration: Swift.Int?
+  public let id: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SubscriptionType : Swift.Codable {
+  public let physical: Swift.Bool?, digital: Swift.Bool?, adFree: Swift.Bool?
+  public let id: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Address : Swift.Codable {
+  public let apartment: Swift.String?, area: Swift.String?, pincode: Swift.String?, landmark: Swift.String?
+  public let city: Swift.String?, state: Swift.String?, country: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension CCPlugin.Mode : Swift.Equatable {}
+extension CCPlugin.Mode : Swift.Hashable {}
+extension CCPlugin.Mode : Swift.RawRepresentable {}
