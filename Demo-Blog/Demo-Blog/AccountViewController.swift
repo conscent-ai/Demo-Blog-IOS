@@ -74,12 +74,12 @@ extension AccountViewController: CCPluginUserDetailsDelegate {
 }
 
 extension AccountViewController: CCPluginUserLogOutDelegate {
-    func userLogOutSuccess() {
-        Toast.shared.showToast(message: "You have been successfully logged out!", alignment: .center, size: 60)
+    func userLogOutFailure(message: String, errorCode: String) {
+        Toast.shared.showToast(message: "message: \(message), errorCode: \(errorCode)", alignment: .center, size: 60)
     }
     
-    func userLogOutFailure() {
-        Toast.shared.showToast(message: "Logout Failed", alignment: .center, size: 60)
+    func userLogOutSuccess() {
+        Toast.shared.showToast(message: "You have been successfully logged out!", alignment: .center, size: 60)
     }
 }
 
@@ -118,6 +118,10 @@ extension AccountViewController: UITextFieldDelegate {
     }
 }
 extension AccountViewController: CCPluginUserLogInDelegate {
+    func userLogInFailure(message: String, errorCode: String) {
+        Toast.shared.showToast(message: "message: \(message), errorCode: \(errorCode)", alignment: .center, size: 60)
+    }
+    
     func userLogInSuccess(message: String, userId: String, authToken: String) {
         CCplugin.shared.getUserDetail(completiondelegate: self)
         debugPrint("message: \(message), userId: \(userId), authToken: \(authToken)")
@@ -130,8 +134,5 @@ extension AccountViewController: CCPluginUserLogInDelegate {
         Toast.shared.showToast(message: "Login Successfully \(userId)", alignment: .center, size: 60)
     }
     
-    func userLogInFailure() {
-        Toast.shared.showToast(message: "Login Failed", alignment: .center, size: 60)
-    }
 }
 

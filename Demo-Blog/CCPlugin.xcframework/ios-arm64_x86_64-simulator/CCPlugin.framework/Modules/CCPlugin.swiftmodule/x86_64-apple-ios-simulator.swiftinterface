@@ -1,6 +1,8 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
 // swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CCPlugin
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AuthenticationServices
 @_exported import CCPlugin
 import CoreGraphics
 import CoreText
@@ -8,6 +10,7 @@ import DeveloperToolsSupport
 import Foundation
 import GoogleSignIn
 import SafariServices
+import StoreKit
 import Swift
 import SwiftUI
 import SystemConfiguration
@@ -16,12 +19,20 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@available(iOS 15.0, *)
+extension CCPlugin.CCplugin {
+  final public func fetchAvailableProducts(clientID: Swift.String, completion: @escaping (Swift.Result<[Swift.String], any Swift.Error>) -> Swift.Void)
+  final public func purchaseProduct(productId: Swift.String, tierId: Swift.String, subId: Swift.String, accessToken: Swift.String?)
+  final public func refoundPurchase(productId: Swift.String, view: UIKit.UIView)
+  final public func restorePurchase()
+}
 public protocol CCPluginCompletionHandlerDelegate : AnyObject {
-  func success()
+  func success(accessType: Swift.String)
   func failure()
   func purchasedOrNot(accessTime: Swift.Bool)
   func onCustomLinkSlot(link: Swift.String?, contentId: Swift.String)
   func onPaywallVisible(paywallType: Swift.String, paywallDisplayType: Swift.String, paywallHeight: CoreFoundation.CGFloat)
+  func loginSuccess(message: Swift.String, userId: Swift.String, authToken: Swift.String)
 }
 public protocol CCPluginSubscribeBtnTapDelegate : AnyObject {
   func subscribeBtnTap()
@@ -43,16 +54,31 @@ public protocol CCPluginEventParamsDelegate : AnyObject {
 }
 public protocol CCPluginUserLogOutDelegate : AnyObject {
   func userLogOutSuccess()
-  func userLogOutFailure()
+  func userLogOutFailure(message: Swift.String, errorCode: Swift.String)
+}
+public protocol CCPluginUserProfileDelegate : AnyObject {
+  func success(message: Swift.String, statusCode: Swift.String)
+  func failure(message: Swift.String, errorCode: Swift.String)
 }
 public protocol CCPluginUserLogInDelegate : AnyObject {
   func userLogInSuccess(message: Swift.String, userId: Swift.String, authToken: Swift.String)
-  func userLogInFailure()
+  func userLogInFailure(message: Swift.String, errorCode: Swift.String)
 }
 public protocol CCPluginGoogleUserLogInDelegate : AnyObject {
   func startGoogleLogin()
   func googleUserLogInSuccess()
   func googleUserLogInFailure()
+}
+public protocol CCPluginAppleUserLogInDelegate : AnyObject {
+  func startAppleLogin()
+  func appleUserLogInSuccess()
+  func appleUserLogInFailure()
+}
+public protocol CCPluginInAppPurchaseDelegate : AnyObject {
+  func onPurchaseStarted()
+  func onPurchaseCompleted()
+  func onPurchaseError(error: Swift.String)
+  func onPurchaseCancelled()
 }
 public enum Mode : Swift.String {
   case stage
@@ -80,37 +106,49 @@ public enum Mode : Swift.String {
   }
   final public func configure(mode: CCPlugin.Mode = .stage, clientID: Swift.String)
   final public func setClientUserId(clientUserId: Swift.String)
-  final public func showPayWall(contentID: Swift.String, title: Swift.String? = nil, categories: [Swift.String]? = nil, sections: [Swift.String]? = nil, tags: [Swift.String]? = nil, contentUrl: Swift.String? = nil, authorName: Swift.String? = nil, url: Swift.String? = nil, parentView: UIKit.UIView, navigationController: UIKit.UINavigationController? = nil, eventParamsDelegate: (any CCPlugin.CCPluginEventParamsDelegate)? = nil, googleUserLogInDelegate: (any CCPlugin.CCPluginGoogleUserLogInDelegate)? = nil, completiondelegate: any CCPlugin.CCPluginCompletionHandlerDelegate, subscriberDelegate: (any CCPlugin.CCPluginSubscribeBtnTapDelegate)? = nil, signInDelegate: (any CCPlugin.CCPluginSignBtnTapDelegate)? = nil)
+  final public func showPayWall(contentID: Swift.String, title: Swift.String? = nil, categories: [Swift.String]? = nil, sections: [Swift.String]? = nil, tags: [Swift.String]? = nil, contentUrl: Swift.String? = nil, authorName: Swift.String? = nil, publicationDate: Swift.String? = nil, url: Swift.String? = nil, parentView: UIKit.UIView, navigationController: UIKit.UINavigationController? = nil, eventParamsDelegate: (any CCPlugin.CCPluginEventParamsDelegate)? = nil, googleUserLogInDelegate: (any CCPlugin.CCPluginGoogleUserLogInDelegate)? = nil, completiondelegate: any CCPlugin.CCPluginCompletionHandlerDelegate, subscriberDelegate: (any CCPlugin.CCPluginSubscribeBtnTapDelegate)? = nil, signInDelegate: (any CCPlugin.CCPluginSignBtnTapDelegate)? = nil)
   final public func initSubscriptions(contentID: Swift.String, title: Swift.String? = nil, url: Swift.String? = nil, parentView: UIKit.UIView, completiondelegate: any CCPlugin.CCPluginCompletionHandlerDelegate, subscriberDelegate: (any CCPlugin.CCPluginSubscribeBtnTapDelegate)? = nil, signInDelegate: (any CCPlugin.CCPluginSignBtnTapDelegate)? = nil, showCrossButton: Swift.Bool = false)
   final public func userLogIn(userLogInDelegate: any CCPlugin.CCPluginUserLogInDelegate)
   final public func userLogout(userLogOutDelegate: (any CCPlugin.CCPluginUserLogOutDelegate)? = nil)
-  final public func googleUserLogIn(controller: UIKit.UIViewController, googleUserLogInDelegate: (any CCPlugin.CCPluginGoogleUserLogInDelegate)? = nil)
+  final public func openUserDetails(userProfileDelegate: any CCPlugin.CCPluginUserProfileDelegate)
+  final public func googleUserLogIn(controller: UIKit.UIViewController, googleUserLogInDelegate: (any CCPlugin.CCPluginGoogleUserLogInDelegate)? = nil, fromWeb: Swift.Bool = false)
+  final public func appleUserLogIn(controller: UIKit.UIViewController, appleUserLogInDelegate: (any CCPlugin.CCPluginAppleUserLogInDelegate)? = nil)
   final public func getUserDetail(completiondelegate: any CCPlugin.CCPluginUserDetailsDelegate)
   final public func exitSDK()
   @objc deinit
 }
+extension CCPlugin.CCplugin : AuthenticationServices.ASAuthorizationControllerDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc final public func authorizationController(controller: AuthenticationServices.ASAuthorizationController, didCompleteWithError error: any Swift.Error)
+  @_Concurrency.MainActor @preconcurrency @objc final public func authorizationController(controller: AuthenticationServices.ASAuthorizationController, didCompleteWithAuthorization authorization: AuthenticationServices.ASAuthorization)
+}
+extension CCPlugin.CCplugin : AuthenticationServices.ASAuthorizationControllerPresentationContextProviding {
+  @_Concurrency.MainActor @preconcurrency @objc final public func presentationAnchor(for controller: AuthenticationServices.ASAuthorizationController) -> AuthenticationServices.ASPresentationAnchor
+}
 extension CCPlugin.CCplugin {
   final public func handleRelaunchApp(url: Foundation.URL)
 }
+extension CCPlugin.CCplugin {
+  final public func openCustomUrl(customUrl: Swift.String)
+}
 extension UIKit.UIApplication {
-  @_Concurrency.MainActor(unsafe) public static var rootViewController: UIKit.UIViewController? {
+  @_Concurrency.MainActor @preconcurrency public static var rootViewController: UIKit.UIViewController? {
     get
   }
-  @_Concurrency.MainActor(unsafe) public static var topMostViewController: UIKit.UIViewController? {
+  @_Concurrency.MainActor @preconcurrency public static var topMostViewController: UIKit.UIViewController? {
     get
   }
-  @_Concurrency.MainActor(unsafe) public static var presentedViewController: UIKit.UIViewController? {
+  @_Concurrency.MainActor @preconcurrency public static var presentedViewController: UIKit.UIViewController? {
     get
   }
-  @_Concurrency.MainActor(unsafe) public static func topNavigationController(_ viewController: UIKit.UIViewController? = nil) -> UIKit.UINavigationController?
+  @_Concurrency.MainActor @preconcurrency public static func topNavigationController(_ viewController: UIKit.UIViewController? = nil) -> UIKit.UINavigationController?
 }
 extension UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) public var ccVisibleViewController: UIKit.UIViewController? {
+  @_Concurrency.MainActor @preconcurrency public var ccVisibleViewController: UIKit.UIViewController? {
     get
   }
 }
 extension UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public static func ccLoadFromXib<T>(withOwner: Any? = nil, options: [UIKit.UINib.OptionsKey : Any]? = nil) -> T where T : UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency public static func ccLoadFromXib<T>(withOwner: Any? = nil, options: [UIKit.UINib.OptionsKey : Any]? = nil) -> T where T : UIKit.UIView
 }
 public struct ViewLayoutInfo {
   public var vc: UIKit.UIViewController
@@ -140,7 +178,8 @@ public struct ActiveSubscription : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct SubscriptionDetails : Swift.Codable {
-  public let inrPrice: Swift.Int?, duration: Swift.Int?
+  public let inrPrice: Swift.Float?
+  public let duration: Swift.Int?
   public let id: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -157,6 +196,16 @@ public struct Address : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public enum StoreError : Swift.Error {
+  case failedVerification
+  public static func == (a: CCPlugin.StoreError, b: CCPlugin.StoreError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 extension CCPlugin.Mode : Swift.Equatable {}
 extension CCPlugin.Mode : Swift.Hashable {}
 extension CCPlugin.Mode : Swift.RawRepresentable {}
+extension CCPlugin.StoreError : Swift.Equatable {}
+extension CCPlugin.StoreError : Swift.Hashable {}
