@@ -91,19 +91,20 @@ class NewsDetailsViewController: UIViewController {
 }
 
 extension NewsDetailsViewController: CCPluginCompletionHandlerDelegate {
+    func success(accessType: String) {
+        Toast.shared.showToast(message: "accessType: \(accessType)", alignment: .center, size: 60)
+    }
+    
+    func loginSuccess(message: String, userId: String, authToken: String) {
+        Toast.shared.showToast(message: "message: \(message), userId: \(userId)", alignment: .center, size: 60)
+    }
+    
     func onCustomLinkSlot(link: String?, contentId: String) {
         debugPrint("\(String(describing: link))")
     }
     
     func onPaywallVisible(paywallType: String, paywallDisplayType: String, paywallHeight: CGFloat) {
         debugPrint("SecondDetailViewController: paywallHeight = \(paywallHeight)")
-    }
-    func success() {
-        print("CCPluginCompletionHandlerDelegate:success()")
-        Helper.isLoggedIn = true
-        if Helper.userName?.isEmpty == true {
-            CCplugin.shared.getUserDetail(completiondelegate: self)
-        }
     }
     
     func failure() {

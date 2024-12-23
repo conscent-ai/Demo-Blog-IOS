@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		225E748A2A4B15D60054248E /* Pods_Demo_Blog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4AD09249498CBC09D00B052 /* Pods_Demo_Blog.framework */; };
 		225E74992A4B25780054248E /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225E74982A4B25780054248E /* RewardViewController.swift */; };
 		225E749B2A4C59B50054248E /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 225E749A2A4C59B50054248E /* data.json */; };
 		225E749D2A4C5A260054248E /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225E749C2A4C5A260054248E /* NewsModel.swift */; };
@@ -30,8 +29,24 @@
 		22FD578D2A3F6416009D577F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD57852A3F6416009D577F /* PageViewController.swift */; };
 		22FD57902A3F6712009D577F /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD578F2A3F6712009D577F /* PremiumViewController.swift */; };
 		22FD57ED2A4357DD009D577F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD57EC2A4357DD009D577F /* AccountViewController.swift */; };
-		AF418D1A2C576BDE00E82900 /* CCPlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF418D192C576BDE00E82900 /* CCPlugin.xcframework */; };
+		3A06D1BF2D198210009F4859 /* Pods_Demo_Blog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4AD09249498CBC09D00B052 /* Pods_Demo_Blog.framework */; };
+		3A06D1C22D198215009F4859 /* CCPlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A06D1BD2D197E43009F4859 /* CCPlugin.xcframework */; };
+		3A06D1C32D198215009F4859 /* CCPlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A06D1BD2D197E43009F4859 /* CCPlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3A06D1C42D198215009F4859 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3A06D1C32D198215009F4859 /* CCPlugin.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		225E74982A4B25780054248E /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewController.swift; sourceTree = "<group>"; };
@@ -59,9 +74,9 @@
 		22FD578F2A3F6712009D577F /* PremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
 		22FD57EC2A4357DD009D577F /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		288D36BEB26993A713B9D2BF /* Pods-Demo-Blog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-Blog.release.xcconfig"; path = "Target Support Files/Pods-Demo-Blog/Pods-Demo-Blog.release.xcconfig"; sourceTree = "<group>"; };
+		3A06D1BD2D197E43009F4859 /* CCPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CCPlugin.xcframework; sourceTree = "<group>"; };
 		88911ACF76C9F9913FA3AB27 /* Pods-Demo-Blog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-Blog.debug.xcconfig"; path = "Target Support Files/Pods-Demo-Blog/Pods-Demo-Blog.debug.xcconfig"; sourceTree = "<group>"; };
 		AF418D132C576B0900E82900 /* CCPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CCPlugin.xcframework; path = ../../../../Downloads/CCPlugin.xcframework; sourceTree = "<group>"; };
-		AF418D192C576BDE00E82900 /* CCPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CCPlugin.xcframework; sourceTree = "<group>"; };
 		AFF919672BC655F80030B806 /* CCPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CCPlugin.xcframework; path = ../../../Documents/GitHub/IOS/Build/CCPlugin.xcframework; sourceTree = "<group>"; };
 		D4AD09249498CBC09D00B052 /* Pods_Demo_Blog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_Blog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -71,8 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF418D1A2C576BDE00E82900 /* CCPlugin.xcframework in Frameworks */,
-				225E748A2A4B15D60054248E /* Pods_Demo_Blog.framework in Frameworks */,
+				3A06D1C22D198215009F4859 /* CCPlugin.xcframework in Frameworks */,
+				3A06D1BF2D198210009F4859 /* Pods_Demo_Blog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +97,7 @@
 		22FD57552A3C81A4009D577F = {
 			isa = PBXGroup;
 			children = (
-				AF418D192C576BDE00E82900 /* CCPlugin.xcframework */,
+				3A06D1BD2D197E43009F4859 /* CCPlugin.xcframework */,
 				22FD57602A3C81A4009D577F /* Demo-Blog */,
 				22FD575F2A3C81A4009D577F /* Products */,
 				31E95601A122D6B19D166957 /* Pods */,
@@ -167,6 +182,7 @@
 				22FD575B2A3C81A4009D577F /* Frameworks */,
 				22FD575C2A3C81A4009D577F /* Resources */,
 				CF038E12C0ACEFDB898A010B /* [CP] Embed Pods Frameworks */,
+				3A06D1C42D198215009F4859 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
