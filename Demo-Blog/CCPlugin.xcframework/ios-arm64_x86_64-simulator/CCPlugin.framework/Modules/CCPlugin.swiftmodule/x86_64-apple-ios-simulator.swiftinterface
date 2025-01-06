@@ -7,6 +7,8 @@ import AuthenticationServices
 import CoreGraphics
 import CoreText
 import DeveloperToolsSupport
+import FBSDKCoreKit
+import FBSDKLoginKit
 import Foundation
 import GoogleSignIn
 import SafariServices
@@ -106,13 +108,14 @@ public enum Mode : Swift.String {
   }
   final public func configure(mode: CCPlugin.Mode = .stage, clientID: Swift.String)
   final public func setClientUserId(clientUserId: Swift.String)
-  final public func showPayWall(contentID: Swift.String, title: Swift.String? = nil, categories: [Swift.String]? = nil, sections: [Swift.String]? = nil, tags: [Swift.String]? = nil, contentUrl: Swift.String? = nil, authorName: Swift.String? = nil, publicationDate: Swift.String? = nil, url: Swift.String? = nil, parentView: UIKit.UIView, navigationController: UIKit.UINavigationController? = nil, eventParamsDelegate: (any CCPlugin.CCPluginEventParamsDelegate)? = nil, googleUserLogInDelegate: (any CCPlugin.CCPluginGoogleUserLogInDelegate)? = nil, completiondelegate: any CCPlugin.CCPluginCompletionHandlerDelegate, subscriberDelegate: (any CCPlugin.CCPluginSubscribeBtnTapDelegate)? = nil, signInDelegate: (any CCPlugin.CCPluginSignBtnTapDelegate)? = nil)
+  final public func showPayWall(contentID: Swift.String, variables: Swift.Dictionary<Swift.String, Swift.String>? = nil, title: Swift.String? = nil, categories: [Swift.String]? = nil, sections: [Swift.String]? = nil, tags: [Swift.String]? = nil, contentUrl: Swift.String? = nil, authorName: Swift.String? = nil, publicationDate: Swift.String? = nil, url: Swift.String? = nil, parentView: UIKit.UIView, navigationController: UIKit.UINavigationController? = nil, eventParamsDelegate: (any CCPlugin.CCPluginEventParamsDelegate)? = nil, googleUserLogInDelegate: (any CCPlugin.CCPluginGoogleUserLogInDelegate)? = nil, completiondelegate: any CCPlugin.CCPluginCompletionHandlerDelegate, subscriberDelegate: (any CCPlugin.CCPluginSubscribeBtnTapDelegate)? = nil, signInDelegate: (any CCPlugin.CCPluginSignBtnTapDelegate)? = nil)
   final public func initSubscriptions(contentID: Swift.String, title: Swift.String? = nil, url: Swift.String? = nil, parentView: UIKit.UIView, completiondelegate: any CCPlugin.CCPluginCompletionHandlerDelegate, subscriberDelegate: (any CCPlugin.CCPluginSubscribeBtnTapDelegate)? = nil, signInDelegate: (any CCPlugin.CCPluginSignBtnTapDelegate)? = nil, showCrossButton: Swift.Bool = false)
   final public func userLogIn(userLogInDelegate: any CCPlugin.CCPluginUserLogInDelegate)
   final public func userLogout(userLogOutDelegate: (any CCPlugin.CCPluginUserLogOutDelegate)? = nil)
   final public func openUserDetails(userProfileDelegate: any CCPlugin.CCPluginUserProfileDelegate)
   final public func googleUserLogIn(controller: UIKit.UIViewController, googleUserLogInDelegate: (any CCPlugin.CCPluginGoogleUserLogInDelegate)? = nil, fromWeb: Swift.Bool = false)
   final public func appleUserLogIn(controller: UIKit.UIViewController, appleUserLogInDelegate: (any CCPlugin.CCPluginAppleUserLogInDelegate)? = nil)
+  final public func facebookUserLogIn(controller: UIKit.UIViewController)
   final public func getUserDetail(completiondelegate: any CCPlugin.CCPluginUserDetailsDelegate)
   final public func exitSDK()
   @objc deinit

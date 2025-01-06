@@ -1751,6 +1751,20 @@
         "moduleName": "CCPlugin"
       },
       {
+        "kind": "Import",
+        "name": "FBSDKLoginKit",
+        "printedName": "FBSDKLoginKit",
+        "declKind": "Import",
+        "moduleName": "CCPlugin"
+      },
+      {
+        "kind": "Import",
+        "name": "FBSDKCoreKit",
+        "printedName": "FBSDKCoreKit",
+        "declKind": "Import",
+        "moduleName": "CCPlugin"
+      },
+      {
         "kind": "TypeDecl",
         "name": "CCplugin",
         "printedName": "CCplugin",
@@ -2448,7 +2462,7 @@
           {
             "kind": "Function",
             "name": "showPayWall",
-            "printedName": "showPayWall(contentID:title:categories:sections:tags:contentUrl:authorName:publicationDate:url:parentView:navigationController:eventParamsDelegate:googleUserLogInDelegate:completiondelegate:subscriberDelegate:signInDelegate:)",
+            "printedName": "showPayWall(contentID:variables:title:categories:sections:tags:contentUrl:authorName:publicationDate:url:parentView:navigationController:eventParamsDelegate:googleUserLogInDelegate:completiondelegate:subscriberDelegate:signInDelegate:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -2460,6 +2474,35 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -2694,8 +2737,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8CCPlugin8CCpluginC11showPayWall9contentID5title10categories8sections4tags0F3Url10authorName15publicationDate3url10parentView20navigationController19eventParamsDelegate015googleUserLogInX018completiondelegate010subscriberX006signInX0ySS_SSSgSaySSGSgA2w4USo6UIViewCSo012UINavigationU0CSgAA0a5EventwX0_pSgAA0a6Googlez5LogInX0_pSgAA0a17CompletionHandlerX0_pAA0a15SubscribeBtnTapX0_pSgAA0a10SignBtnTapX0_pSgtF",
-            "mangledName": "$s8CCPlugin8CCpluginC11showPayWall9contentID5title10categories8sections4tags0F3Url10authorName15publicationDate3url10parentView20navigationController19eventParamsDelegate015googleUserLogInX018completiondelegate010subscriberX006signInX0ySS_SSSgSaySSGSgA2w4USo6UIViewCSo012UINavigationU0CSgAA0a5EventwX0_pSgAA0a6Googlez5LogInX0_pSgAA0a17CompletionHandlerX0_pAA0a15SubscribeBtnTapX0_pSgAA0a10SignBtnTapX0_pSgtF",
+            "usr": "s:8CCPlugin8CCpluginC11showPayWall9contentID9variables5title10categories8sections4tags0F3Url10authorName15publicationDate3url10parentView20navigationController19eventParamsDelegate015googleUserLogInY018completiondelegate010subscriberY006signInY0ySS_SDyS2SGSgSSSgSaySSGSgA2z4XSo6UIViewCSo012UINavigationV0CSgAA0a5EventxY0_pSgAA0a15GoogleUserLogInY0_pSgAA0a17CompletionHandlerY0_pAA0a15SubscribeBtnTapY0_pSgAA0a10SignBtnTapY0_pSgtF",
+            "mangledName": "$s8CCPlugin8CCpluginC11showPayWall9contentID9variables5title10categories8sections4tags0F3Url10authorName15publicationDate3url10parentView20navigationController19eventParamsDelegate015googleUserLogInY018completiondelegate010subscriberY006signInY0ySS_SDyS2SGSgSSSgSaySSGSgA2z4XSo6UIViewCSo012UINavigationV0CSgAA0a5EventxY0_pSgAA0a15GoogleUserLogInY0_pSgAA0a17CompletionHandlerY0_pAA0a15SubscribeBtnTapY0_pSgAA0a10SignBtnTapY0_pSgtF",
             "moduleName": "CCPlugin",
             "declAttributes": [
               "Final",
@@ -2984,6 +3027,33 @@
             "declKind": "Func",
             "usr": "s:8CCPlugin8CCpluginC14appleUserLogIn10controller0cdeF8DelegateySo16UIViewControllerC_AA0a5AppledefH0_pSgtF",
             "mangledName": "$s8CCPlugin8CCpluginC14appleUserLogIn10controller0cdeF8DelegateySo16UIViewControllerC_AA0a5AppledefH0_pSgtF",
+            "moduleName": "CCPlugin",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "facebookUserLogIn",
+            "printedName": "facebookUserLogIn(controller:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8CCPlugin8CCpluginC17facebookUserLogIn10controllerySo16UIViewControllerC_tF",
+            "mangledName": "$s8CCPlugin8CCpluginC17facebookUserLogIn10controllerySo16UIViewControllerC_tF",
             "moduleName": "CCPlugin",
             "declAttributes": [
               "Final",
@@ -9103,420 +9173,420 @@
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 858,
+      "offset": 946,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 2306,
+      "offset": 2394,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 2423,
+      "offset": 2511,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 2591,
+      "offset": 2679,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 2630,
+      "offset": 2718,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 2669,
+      "offset": 2757,
       "length": 45,
       "value": "\"Scroll depth changed to \""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 2713,
+      "offset": 2801,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 2783,
+      "offset": 2871,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 2963,
+      "offset": 3051,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 3046,
+      "offset": 3134,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 3129,
+      "offset": 3217,
       "length": 8,
       "value": "\"pixels\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 3602,
+      "offset": 3690,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 3689,
+      "offset": 3777,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 3776,
+      "offset": 3864,
       "length": 8,
       "value": "\"pixels\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 2459,
+      "offset": 2547,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 4248,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4297,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
-      "kind": "StringLiteral",
       "offset": 4336,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4385,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
+      "kind": "StringLiteral",
+      "offset": 4424,
       "length": 66,
       "value": "\"Scroll depth percentage changed to \""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 4401,
+      "offset": 4489,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 4471,
+      "offset": 4559,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 4651,
+      "offset": 4739,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 4734,
+      "offset": 4822,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 4817,
+      "offset": 4905,
       "length": 9,
       "value": "\"percent\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 5292,
+      "offset": 5380,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 5379,
+      "offset": 5467,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 5466,
+      "offset": 5554,
       "length": 9,
       "value": "\"percent\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 4106,
+      "offset": 4194,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 5792,
+      "offset": 5880,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 5845,
+      "offset": 5933,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 5894,
+      "offset": 5982,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 5941,
+      "offset": 6029,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 9511,
+      "offset": 9712,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 13649,
+      "offset": 13850,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 14796,
+      "offset": 14997,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 34402,
+      "offset": 39310,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 34423,
+      "offset": 39331,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 42350,
+      "offset": 47258,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 42371,
+      "offset": 47279,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 54926,
+      "offset": 59834,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 54947,
+      "offset": 59855,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 58887,
+      "offset": 63795,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 58911,
+      "offset": 63819,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 71149,
+      "offset": 76057,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 79490,
+      "offset": 86373,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 79513,
+      "offset": 86396,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "BooleanLiteral",
-      "offset": 81869,
+      "offset": 88752,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 91716,
+      "offset": 98599,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 94368,
+      "offset": 101251,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 99875,
+      "offset": 106758,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "IntegerLiteral",
-      "offset": 124076,
+      "offset": 130959,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 129173,
+      "offset": 136056,
       "length": 4,
       "value": "\"3A\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 129202,
+      "offset": 136085,
       "length": 4,
       "value": "\"4A\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 129231,
+      "offset": 136114,
       "length": 4,
       "value": "\"5A\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 129260,
+      "offset": 136143,
       "length": 4,
       "value": "\"7A\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 129289,
+      "offset": 136172,
       "length": 4,
       "value": "\"8A\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 129318,
+      "offset": 136201,
       "length": 5,
       "value": "\"RG4\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 129348,
+      "offset": 136231,
       "length": 5,
       "value": "\"RG5\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 129378,
+      "offset": 136261,
       "length": 5,
       "value": "\"RG6\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 129408,
+      "offset": 136291,
       "length": 5,
       "value": "\"13A\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/CCPlugin.swift",
       "kind": "StringLiteral",
-      "offset": 129438,
+      "offset": 136321,
       "length": 5,
       "value": "\"15A\""
     },
@@ -10111,98 +10181,98 @@
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 32528,
+      "offset": 33585,
       "length": 3,
       "value": "\"-\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 32539,
+      "offset": 33596,
       "length": 3,
       "value": "\"+\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 32586,
+      "offset": 33643,
       "length": 3,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 32597,
+      "offset": 33654,
       "length": 3,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 32669,
+      "offset": 33726,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 32674,
+      "offset": 33731,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 32679,
+      "offset": 33736,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 32691,
+      "offset": 33748,
       "length": 3,
       "value": "\"=\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 32708,
+      "offset": 33765,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "Array",
-      "offset": 33078,
+      "offset": 34135,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 33247,
+      "offset": 34304,
       "length": 5,
       "value": "\"sub\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 33429,
+      "offset": 34486,
       "length": 3,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 33462,
+      "offset": 34519,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/harsh\/Documents\/GitHub\/IOS\/CCPlugin\/Subscription\/WebViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 33512,
+      "offset": 34569,
       "length": 1,
       "value": "1"
     },
