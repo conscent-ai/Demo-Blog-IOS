@@ -38,7 +38,7 @@ class AccountViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: UIButton) {
-        CCplugin.shared.configure(mode: .sandbox, clientID: "661907c2487ae1aba956dcc4")
+//        CCplugin.shared.configure(mode: .sandbox, clientID: "661907c2487ae1aba956dcc4")
         CCplugin.shared.userLogIn(userLogInDelegate: self)
     }
     
@@ -118,6 +118,10 @@ extension AccountViewController: UITextFieldDelegate {
     }
 }
 extension AccountViewController: CCPluginUserLogInDelegate {
+    func redirectToHomeScreen(message: String) {
+        Toast.shared.showToast(message: "message: \(message)", alignment: .center, size: 60)
+    }
+    
     func userLogInFailure(message: String, errorCode: String) {
         Toast.shared.showToast(message: "message: \(message), errorCode: \(errorCode)", alignment: .center, size: 60)
     }

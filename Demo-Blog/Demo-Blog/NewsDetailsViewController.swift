@@ -22,26 +22,41 @@ class NewsDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.isHidden = true
         CCplugin.shared.getUserDetail(completiondelegate: self)
         self.setData()
-        if isNeedToShowPayWall {
-            CCplugin.shared.configure(mode: .sandbox, clientID: "661907c2487ae1aba956dcc4")
-            CCplugin.shared.debugMode = true
-            CCplugin.shared.showPayWall(contentID: contentID, title: contentID,
-                                        categories: ["category1","category2","category3"] ,
-                                        sections: ["section12","section14"],
-                                        tags: ["premium"],
-                                        contentUrl: "https://www.google.com/",
-                                        authorName: "abc",
-                                        parentView: view,
-                                        navigationController: self.navigationController,
-                                        eventParamsDelegate: self,
-                                        googleUserLogInDelegate: self,
-                                        completiondelegate: self,
-                                        subscriberDelegate: self,
-                                        signInDelegate: self)
-        }
+//        if isNeedToShowPayWall {
+////            CCplugin.shared.configure(mode: .sandbox, clientID: "661907c2487ae1aba956dcc4")
+//            CCplugin.shared.debugMode = true
+//            CCplugin.shared.showPayWall(contentID: contentID, title: contentID,
+//                                        categories: ["category1","category2","category3"] ,
+//                                        sections: ["section12","section14"],
+//                                        tags: ["premium"],
+//                                        contentUrl: "https://www.google.com/",
+//                                        authorName: "abc",
+//                                        parentView: view,
+//                                        navigationController: self.navigationController,
+//                                        eventParamsDelegate: self,
+//                                        googleUserLogInDelegate: self,
+//                                        completiondelegate: self,
+//                                        subscriberDelegate: self,
+//                                        signInDelegate: self)
+//        }else{
+//            print("Paywall is not needed to show")
+//        }
+        CCplugin.shared.showPayWall(contentID: contentID, title: contentID,
+                                    categories: ["category1","category2","category3"] ,
+                                    sections: ["section12","section14"],
+                                    tags: ["premium"],
+                                    contentUrl: "https://www.google.com/",
+                                    authorName: "abc",
+                                    parentView: view,
+                                    navigationController: self.navigationController,
+                                    eventParamsDelegate: self,
+                                    googleUserLogInDelegate: self,
+                                    completiondelegate: self,
+                                    subscriberDelegate: self,
+                                    signInDelegate: self)
     }
     
     fileprivate func setData() {
@@ -172,6 +187,24 @@ extension NewsDetailsViewController: CCPluginGoogleUserLogInDelegate {
     
     func googleUserLogInFailure() {
         debugPrint("SecondDetailViewController: googleUserLogInFailure")
+    }
+    
+}
+
+extension NewsDetailsViewController: CCPluginUserLogInDelegate {
+    func redirectToHomeScreen(message: String) {
+        Toast.shared.showToast(message: "message: \(message)", alignment: .center, size: 60)
+    }
+    
+    func userLogInFailure(message: String, errorCode: String) {
+        Toast.shared.showToast(message: "message: \(message), errorCode: \(errorCode)", alignment: .center, size: 60)
+    }
+    
+    func userLogInSuccess(message: String, userId: String, authToken: String) {
+        CCplugin.shared.getUserDetail(completiondelegate: self)
+        debugPrint("message: \(message), userId: \(userId), authToken: \(authToken)")
+                Helper.isLoggedIn = true
+        Toast.shared.showToast(message: "Login Successfully \(userId)", alignment: .center, size: 60)
     }
     
     

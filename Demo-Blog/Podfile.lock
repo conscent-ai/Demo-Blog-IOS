@@ -80,8 +80,8 @@ PODS:
   - PromisesObjC (2.4.0)
 
 DEPENDENCIES:
-  - FBSDKLoginKit (= 17.4.0)
-  - FBSDKShareKit (= 17.4.0)
+  - FBSDKLoginKit
+  - FBSDKShareKit
   - GoogleSignIn
   - IQKeyboardManagerSwift
 
@@ -130,6 +130,6 @@ SPEC CHECKSUMS:
   IQTextView: ae13b4922f22e6f027f62c557d9f4f236b19d5c7
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
 
-PODFILE CHECKSUM: 9fcee8425267a1e5d93825232ab58512265506f5
+PODFILE CHECKSUM: 816e2e0c583dc632faa28efb987fd06eb94b8fcf
 
 COCOAPODS: 1.15.2
