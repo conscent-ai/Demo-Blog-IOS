@@ -30,8 +30,8 @@
 		22FD57902A3F6712009D577F /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD578F2A3F6712009D577F /* PremiumViewController.swift */; };
 		22FD57ED2A4357DD009D577F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD57EC2A4357DD009D577F /* AccountViewController.swift */; };
 		3A06D1BF2D198210009F4859 /* Pods_Demo_Blog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4AD09249498CBC09D00B052 /* Pods_Demo_Blog.framework */; };
-		3A1E8DA42D2BE01F001804B0 /* CCPlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1E8DA22D2BDF8C001804B0 /* CCPlugin.xcframework */; };
-		3A1E8DA52D2BE01F001804B0 /* CCPlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1E8DA22D2BDF8C001804B0 /* CCPlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3AD747AA2D40C1F800E850A8 /* CCPlugin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD747A82D40C09500E850A8 /* CCPlugin.xcframework */; };
+		3AD747AB2D40C1F800E850A8 /* CCPlugin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD747A82D40C09500E850A8 /* CCPlugin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,7 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3A1E8DA52D2BE01F001804B0 /* CCPlugin.xcframework in Embed Frameworks */,
+				3AD747AB2D40C1F800E850A8 /* CCPlugin.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,7 +74,7 @@
 		22FD578F2A3F6712009D577F /* PremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
 		22FD57EC2A4357DD009D577F /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		288D36BEB26993A713B9D2BF /* Pods-Demo-Blog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-Blog.release.xcconfig"; path = "Target Support Files/Pods-Demo-Blog/Pods-Demo-Blog.release.xcconfig"; sourceTree = "<group>"; };
-		3A1E8DA22D2BDF8C001804B0 /* CCPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CCPlugin.xcframework; sourceTree = "<group>"; };
+		3AD747A82D40C09500E850A8 /* CCPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CCPlugin.xcframework; sourceTree = "<group>"; };
 		88911ACF76C9F9913FA3AB27 /* Pods-Demo-Blog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-Blog.debug.xcconfig"; path = "Target Support Files/Pods-Demo-Blog/Pods-Demo-Blog.debug.xcconfig"; sourceTree = "<group>"; };
 		AF418D132C576B0900E82900 /* CCPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CCPlugin.xcframework; path = ../../../../Downloads/CCPlugin.xcframework; sourceTree = "<group>"; };
 		AFF919672BC655F80030B806 /* CCPlugin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CCPlugin.xcframework; path = ../../../Documents/GitHub/IOS/Build/CCPlugin.xcframework; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A1E8DA42D2BE01F001804B0 /* CCPlugin.xcframework in Frameworks */,
+				3AD747AA2D40C1F800E850A8 /* CCPlugin.xcframework in Frameworks */,
 				3A06D1BF2D198210009F4859 /* Pods_Demo_Blog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,7 +97,7 @@
 		22FD57552A3C81A4009D577F = {
 			isa = PBXGroup;
 			children = (
-				3A1E8DA22D2BDF8C001804B0 /* CCPlugin.xcframework */,
+				3AD747A82D40C09500E850A8 /* CCPlugin.xcframework */,
 				22FD57602A3C81A4009D577F /* Demo-Blog */,
 				22FD575F2A3C81A4009D577F /* Products */,
 				31E95601A122D6B19D166957 /* Pods */,

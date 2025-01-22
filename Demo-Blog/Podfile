@@ -8,7 +8,7 @@ target 'Demo-Blog' do
   # Pods for Demo-Blog
   pod 'IQKeyboardManagerSwift'
   pod 'GoogleSignIn'
-  pod 'FBSDKLoginKit', '17.4.0'
-  pod 'FBSDKShareKit', '17.4.0'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
 
 end

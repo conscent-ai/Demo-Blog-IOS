@@ -6,8 +6,8 @@
 //
 
 import UIKit
+import CCPlugin
 import IQKeyboardManagerSwift
-import GoogleSignIn
 import GoogleSignIn
 import FBSDKCoreKit
 
@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 //        IQKeyboardManager.shared.enable = true
+        CCplugin.shared.configure(mode: .sandbox, clientID: "661907c2487ae1aba956dcc4")
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             if error != nil || user == nil {
                 // Show the app's signed-out state.
